@@ -16,9 +16,9 @@ return new class extends Migration
         Schema::create('sales', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
-            $table->foreignId('vending_machines')->constrained('vending_machines')->onDelete('cascade');
-            $table->foreignId('columns')->constrained('columns');
-            $table->foreignId('products')->nullable()->constrained('products');
+            $table->foreignId('vending_machine_id')->constrained()->onDelete('cascade');
+            $table->foreignId('column_id')->constrained('columns');
+            $table->foreignId('product_id')->nullable()->constrained();
             $table->integer('solds')->comment('売上個数');
             $table->integer('discards')->comment('廃棄個数');
             $table->integer('year');

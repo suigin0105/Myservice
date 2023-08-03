@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('expenses', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('expense_details')->constrained('expense_details');
-            $table->foreignId('vending_machines')->constrained('vending_machines')->onDelete('cascade');
+            $table->foreignId('expense_detail_id')->constrained();
+            $table->foreignId('vending_machine_id')->constrained()->onDelete('cascade');
             $table->biginteger('total')->comment('経費合計');
             $table->timestamps();
         });

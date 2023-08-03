@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('columns', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('vending_machines')->constrained('vending_machines')->onDelete('cascade');
+            $table->foreignId('vending_machine_id')->constrained()->onDelete('cascade');
             $table->string('name', 10);
             $table->integer('storage')->comment('HOT:1,COLD:2,RT:3');
             $table->timestamps();

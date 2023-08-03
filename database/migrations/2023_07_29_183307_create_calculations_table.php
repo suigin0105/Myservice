@@ -16,8 +16,8 @@ return new class extends Migration
         Schema::create('calculations', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
-            $table->foreignId('vending_machines')->constrained('vending_machines');
-            $table->foreignId('sale')->constrained();
+            $table->foreignId('vending_machine_id')->constrained();
+            $table->foreignId('sale_id')->constrained();
             $table->integer('total')->comment('ユーザー収支');
             $table->timestamps();
         });

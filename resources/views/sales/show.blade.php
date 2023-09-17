@@ -30,5 +30,5 @@
              <td>{{ $sale->discards }}</td>
         </tr>
     </table>
-        
+    <a href="/sales">戻る</a>
     </body>
